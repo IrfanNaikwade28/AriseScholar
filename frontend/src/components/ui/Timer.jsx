@@ -24,7 +24,7 @@ export default function Timer({ seconds = 60, onEnd }) {
   const pct = Math.max(0, Math.min(100, (time / seconds) * 100))
   return (
     <div className="w-full">
-      <div className="flex justify-between text-xs mb-1 text-slate-500 dark:text-slate-400">
+  <div className="flex justify-between text-xs mb-1 text-grey-500 dark:text-grey-400">
         <span>Time</span>
         <span>{time}s</span>
       </div>

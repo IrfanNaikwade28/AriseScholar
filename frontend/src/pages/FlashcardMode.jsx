@@ -25,12 +25,12 @@ export default function FlashcardMode() {
   return (
     <div className="grid gap-6">
       <div className="flex items-center justify-between">
-        <NavLink to={`/deck/${deck.id}`} className="text-sm text-slate-500 hover:underline">← Back to {deck.title}</NavLink>
+  <NavLink to={`/deck/${deck.id}`} className="text-sm text-grey-500 hover:underline">← Back to {deck.title}</NavLink>
         <div className="w-64"><ProgressBar value={pct} /></div>
       </div>
 
       {finished ? (
-        <div className="text-center rounded-2xl border border-slate-200 dark:border-slate-800 p-8">
+  <div className="text-center rounded-2xl border border-grey-200 dark:border-grey-800 p-8">
           <h3 className="text-2xl font-bold">Great job! 🎉</h3>
           <p className="mt-2">You knew {correct}/{total} cards. XP earned: {correct * 10}</p>
           <div className="mt-4 flex justify-center gap-3">
@@ -45,7 +45,7 @@ export default function FlashcardMode() {
             <Button variant="danger" onClick={()=>next(false)}>I Don’t Know</Button>
             <Button variant="success" onClick={()=>next(true)}>I Know</Button>
           </div>
-          <p className="text-center text-sm text-slate-500">{i+1} / {total} • ✅ {correct} ❌ {incorrect}</p>
+          <p className="text-center text-sm text-grey-500">{i+1} / {total} • ✅ {correct} ❌ {incorrect}</p>
         </>
       )}
     </div>

@@ -12,7 +12,7 @@ export default function Profile() {
           <div>Level {userProfile.level} • {userProfile.xp} XP • {userProfile.streak} day streak</div>
           <div>Cards Mastered: {userProfile.cardsMastered}</div>
           <div className="flex gap-2 mt-2 flex-wrap">
-            {userProfile.badges.map(b => <span key={b} className="px-2 py-1 rounded-full bg-indigo-50 dark:bg-indigo-500/10 text-indigo-700 dark:text-indigo-300 text-xs">{b}</span>)}
+            {userProfile.badges.map(b => <span key={b} className="px-2 py-1 rounded-full bg-primary-100 dark:bg-primary-500/10 text-primary-700 dark:text-primary-300 text-xs">{b}</span>)}
           </div>
         </CardContent>
       </Card>
@@ -35,10 +35,10 @@ export default function Profile() {
         <CardHeader><CardTitle>Study Groups</CardTitle></CardHeader>
         <CardContent className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
           {studyGroups.map((g)=>(
-            <div key={g.id} className="p-4 rounded-xl border border-slate-200 dark:border-slate-800">
+            <div key={g.id} className="p-4 rounded-xl border border-grey-200 dark:border-grey-800">
               <div className="font-semibold">{g.name}</div>
-              <div className="text-sm text-slate-500">{g.members} members</div>
-              <a href="#" className="text-indigo-600 text-sm hover:underline">Open (mock)</a>
+              <div className="text-sm text-grey-500">{g.members} members</div>
+              <a href="#" className="text-primary-600 text-sm hover:underline">Open (mock)</a>
             </div>
           ))}
         </CardContent>
