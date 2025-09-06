@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'users',
     'flashcards',
     'quizzes',
+    'dashboard',
+
 
 ]
 
