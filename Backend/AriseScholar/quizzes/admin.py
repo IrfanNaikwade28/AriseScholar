@@ -3,15 +3,21 @@ from .models import Quiz, QuizItem
 
 class QuizItemInline(admin.TabularInline):
     model = QuizItem
-    extra = 0
-    readonly_fields = ('user_answer', 'is_correct')
-    fields = ('kind', 'prompt', 'options', 'correct_answer', 'user_answer', 'is_correct', 'difficulty', 'tags')
+    extra = 1
 
 class QuizAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'owner', 'document', 'attempted', 'score', 'duration', 'created_at')
-    search_fields = ('title', 'owner__username', 'document__title')
-    list_filter = ('attempted', 'created_at')
-    readonly_fields = ('attempted_date', 'created_at', 'updated_at')
+    list_display = ('id', 'title', 'owner', 'score', 'attempted')
     inlines = [QuizItemInline]
 
+class QuizItemAdmin(admin.ModelAdmin):
+    list_display = ('id', 'quiz', 'kind', 'prompt', 'difficulty', 'is_correct', 'formatted_options', 'correct_answer')
+    readonly_fields = ('formatted_options', 'correct_answer')
+    search_fields = ('prompt',)
+    list_filter = ('kind', 'difficulty')
+
+    def formatted_options(self, obj):
+        return ", ".join(obj.options) if obj.options else "-"
+    formatted_options.short_description = 'Options'
+
 admin.site.register(Quiz, QuizAdmin)
+admin.site.register(QuizItem, QuizItemAdmin)
