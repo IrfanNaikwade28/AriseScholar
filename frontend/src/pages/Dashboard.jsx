@@ -23,7 +23,7 @@ export default function Dashboard() {
           </div>
           <div className="mt-4">
             <ProgressBar value={pct} />
-            <p className="text-xs text-slate-500 mt-1">{pct}% to next level</p>
+            <p className="text-xs text-grey-500 mt-1">{pct}% to next level</p>
           </div>
         </CardContent>
       </Card>
@@ -34,9 +34,9 @@ export default function Dashboard() {
           <CardContent>
             <ul className="space-y-3">
               {activityFeed.map(a => (
-                <li key={a.id} className="flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50">
+                <li key={a.id} className="flex items-center justify-between p-3 rounded-xl bg-grey-50 dark:bg-grey-800/50">
                   <span>{a.text}</span>
-                  <span className="text-xs text-slate-500">{a.time}</span>
+                  <span className="text-xs text-grey-500">{a.time}</span>
                 </li>
               ))}
             </ul>
@@ -58,8 +58,8 @@ export default function Dashboard() {
 
 function Stat({ label, value }) {
   return (
-    <div className="rounded-xl border border-slate-200 dark:border-slate-800 p-4">
-      <div className="text-sm text-slate-500">{label}</div>
+  <div className="rounded-xl border border-grey-200 dark:border-grey-800 p-4">
+  <div className="text-sm text-grey-500">{label}</div>
       <div className="text-2xl font-bold">{value}</div>
     </div>
   )
