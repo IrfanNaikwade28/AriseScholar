@@ -35,11 +35,21 @@ class Flashcard(models.Model):
         (HARD, 'Hard'),
     ]
 
+    NONE = 'none'
+    YES = 'yes'
+    NO = 'no'
+    STATUS_CHOICES = [
+        (NONE, 'None'),
+        (YES, 'Yes'),
+        (NO, 'No'),
+    ]
+
     document = models.ForeignKey(Document, on_delete=models.CASCADE, related_name='flashcards')
     question = models.TextField()
     answer = models.TextField()
     tags = models.JSONField(default=list)
     difficulty = models.CharField(max_length=10, choices=DIFFICULTY_LEVELS)
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default=NONE)
 
     def __str__(self):
         return self.question

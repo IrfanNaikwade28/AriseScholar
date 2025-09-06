@@ -83,3 +83,21 @@ class FlashcardViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         # Only flashcards belonging to documents of the current user
         return Flashcard.objects.filter(document__owner=self.request.user).order_by('id')
+
+    @action(detail=True, methods=['PATCH'])
+    def update_status(self, request, pk=None):
+        """Update the status of a flashcard"""
+        flashcard = self.get_object()
+        new_status = request.data.get('status')
+        
+        if new_status not in [Flashcard.NONE, Flashcard.YES, Flashcard.NO]:
+            return Response(
+                {'detail': 'Invalid status. Must be none, yes, or no.'}, 
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        
+        flashcard.status = new_status
+        flashcard.save()
+        
+        serializer = self.get_serializer(flashcard)
+        return Response(serializer.data)
