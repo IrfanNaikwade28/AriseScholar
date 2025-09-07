@@ -1,5 +1,8 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import RootLayout from './components/layout/RootLayout'
+import AuthProvider from './components/auth/AuthProvider'
+import ProtectedRoute from './components/auth/ProtectedRoute'
+import ToastProvider from './components/ui/Toast'
 import LandingPage from './pages/LandingPage'
 import AuthPage from './pages/AuthPage'
 import Dashboard from './pages/Dashboard'
@@ -18,18 +21,24 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <LandingPage /> },
       { path: 'auth', element: <AuthPage /> },
-      { path: 'dashboard', element: <Dashboard /> },
-      { path: 'notes', element: <NotesUpload /> },
-      { path: 'deck/:deckId', element: <StudyDeck /> },
-      { path: 'flashcards/:deckId', element: <FlashcardMode /> },
-      { path: 'quiz/:deckId', element: <QuizMode /> },
-      { path: 'progress', element: <Progress /> },
-      { path: 'profile', element: <Profile /> },
-  { path: 'collab', element: <Collaboration /> },
+      { path: 'dashboard', element: <ProtectedRoute><Dashboard /></ProtectedRoute> },
+      { path: 'notes', element: <ProtectedRoute><NotesUpload /></ProtectedRoute> },
+      { path: 'deck/:deckId', element: <ProtectedRoute><StudyDeck /></ProtectedRoute> },
+      { path: 'flashcards/:deckId', element: <ProtectedRoute><FlashcardMode /></ProtectedRoute> },
+      { path: 'quiz/:deckId', element: <ProtectedRoute><QuizMode /></ProtectedRoute> },
+      { path: 'progress', element: <ProtectedRoute><Progress /></ProtectedRoute> },
+      { path: 'profile', element: <ProtectedRoute><Profile /></ProtectedRoute> },
+      { path: 'collab', element: <ProtectedRoute><Collaboration /></ProtectedRoute> },
     ],
   },
 ])
 
 export default function App() {
-  return <RouterProvider router={router} />
+  return (
+    <ToastProvider>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </ToastProvider>
+  )
 }

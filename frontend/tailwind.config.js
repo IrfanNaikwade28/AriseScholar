@@ -8,65 +8,66 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Emerald–teal dark palette
         primary: {
-          100: '#C8FAD6',
-          300: '#5BE49B',
-          500: '#00A76F',
-          700: '#007867',
-          900: '#004B50',
+          100: '#D1FAE5',
+          300: '#6EE7B7',
+          500: '#10B981', // emerald
+          700: '#059669',
+          900: '#065F46',
           foreground: '#FFFFFF',
         },
         secondary: {
-          100: '#EFD6FF',
-          300: '#C684FF',
-          500: '#8E33FF',
-          700: '#5119B7',
-          900: '#27097A',
+          100: '#CFFAFE',
+          300: '#67E8F9',
+          500: '#06B6D4', // cyan
+          700: '#0E7490',
+          900: '#164E63',
           foreground: '#FFFFFF',
         },
         info: {
-          100: '#CAFDF5',
-          300: '#61F3F3',
-          500: '#00B8D9',
-          700: '#006C9C',
-          900: '#003768',
+          100: '#E0F7FF',
+          300: '#82E9FF',
+          500: '#06B6D4', // align info with cyan accent
+          700: '#0E7490',
+          900: '#083344',
           foreground: '#FFFFFF',
         },
         success: {
-          100: '#D3FCD2',
-          300: '#77ED8B',
-          500: '#22C55E',
-          700: '#118D57',
-          900: '#065E49',
+          100: '#DCFCE7',
+          300: '#86EFAC',
+          500: '#10B981', // align success with emerald accent
+          700: '#16A34A',
+          900: '#065F46',
           foreground: '#FFFFFF',
         },
         warning: {
-          100: '#FFF5CC',
-          300: '#FFD666',
-          500: '#FFAB00',
-          700: '#B76E00',
-          900: '#7A4100',
-          foreground: '#1C252E',
+          100: '#FEF9C3',
+          300: '#FDE68A',
+          500: '#FACC15', // amber highlight
+          700: '#D97706',
+          900: '#92400E',
+          foreground: '#0F172A',
         },
         error: {
-          100: '#FFE9D5',
-          300: '#FFAC82',
-          500: '#FF5630',
-          700: '#B71D18',
-          900: '#7A0916',
+          100: '#FEE2E2',
+          300: '#FCA5A5',
+          500: '#EF4444',
+          700: '#B91C1C',
+          900: '#7F1D1D',
           foreground: '#FFFFFF',
         },
         grey: {
-          50: '#FCFDFD',
-          100: '#F9FAFB',
-          200: '#F4F6F8',
-          300: '#DFE3E8',
-          400: '#C4CDD5',
-          500: '#919EAB',
-          600: '#637381',
-          700: '#454F5B',
-          800: '#1C252E',
-          900: '#141A21',
+          50: '#F8FAFC',
+          100: '#E2E8F0',
+          200: '#CBD5E1',
+          300: '#94A3B8', // body text
+          400: '#64748B',
+          500: '#94A3B8', // keep alias for convenience
+          600: '#475569',
+          700: '#334155',
+          800: '#1E293B', // card panel
+          900: '#0F172A', // app background / sidebar
         },
       },
     },

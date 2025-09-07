@@ -7,6 +7,16 @@
   <title>AriseScholar</title>
   </head>
   <body>
+    <script>
+      // Apply theme before React mounts to prevent FOUC; default to dark
+      try {
+        var t = localStorage.getItem('theme');
+        var isDark = t ? t === 'dark' : true;
+        if (isDark) document.documentElement.classList.add('dark');
+      } catch (e) {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
