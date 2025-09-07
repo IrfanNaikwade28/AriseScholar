@@ -1,6 +1,5 @@
 # 🌟 VIRTUAL AriseScholar - AI-Powered Study Companion
 
-![Project Banner](path-to-your-banner.png)  
 
 **AriseScholar** is an **AI-driven educational platform** that automates note-taking, quiz creation, and flashcard generation from PDFs, DOCX, and PYQs. It also provides a **personalized dashboard** for adaptive learning and progress tracking.  
 
@@ -18,72 +17,91 @@
 ---
 
 ##  🖥 Tech Stack
-- **Layer	Technology
-- **Frontend	React / Next.js
+Layer	Technology
+Frontend	React / Next.js
 - **Backend	Django REST Framework
 - **AI Engine	Groq API
 - **Database	SQLite / MongoDB
 - **Deployment	Render / Cloud Platform
 - **Tools & Libs	PyPDF2, python-docx, Django CORS, DRF SimpleJWT, Whitenoise
 
-⚡ Demo
-Upload documents → AI generates notes, quizzes, flashcards
+# 🧠 AriseScholar - AI-Powered Study Companion
 
-Track progress and get adaptive recommendations in the dashboard
+AriseScholar helps students learn smarter by automatically generating **notes, quizzes, and flashcards** from uploaded documents. Track progress and receive adaptive recommendations through an interactive dashboard.  
+# 🧠 AriseScholar - AI-Powered Study Companion
 
-💻 Installation
-Clone the repository
+AriseScholar helps students learn smarter by automatically generating **notes, quizzes, and flashcards** from uploaded documents. Track progress and receive adaptive recommendations through an interactive dashboard.  
 
-bash
-Copy code
+---
+
+## 🖥 Tech Stack
+
+| Layer        | Technology |
+|-------------|------------|
+| **Frontend** | React / Next.js |
+| **Backend**  | Django REST Framework |
+| **AI Engine** | Groq API |
+| **Database** | SQLite / MongoDB |
+| **Deployment** | Render / Cloud Platform |
+| **Tools & Libraries** | PyPDF2, python-docx, Django CORS, DRF SimpleJWT, Whitenoise |
+
+---
+
+## ⚡ Demo Workflow
+
+1. **Upload Documents** → AI generates **notes, quizzes, flashcards**  
+2. **Track Progress** → Dashboard shows statistics and adaptive recommendations  
+
+---
+
+## 💻 Installation
+
+### 1. Clone the repository
+```bash
 git clone https://github.com/IrfanNaikwade28/AriseScholar.git
 cd AriseScholar
-Create Python virtual environment
-
+2. Create and activate a Python virtual environment
 bash
 Copy code
 python -m venv venv
-source venv/bin/activate  # Linux / Mac
-venv\Scripts\activate     # Windows
-Install backend dependencies
-
+# Linux / Mac
+source venv/bin/activate
+# Windows
+venv\Scripts\activate
+3. Install backend dependencies
 bash
 Copy code
 pip install -r requirements.txt
-Set environment variables
+4. Configure environment variables
+Create a .env file in the project root:
 
 env
 Copy code
-# .env file
 DJANGO_SECRET_KEY=your_secret_key
 GROQ_API_KEY=your_groq_api_key
 DEBUG=True
-Run backend migrations
-
+5. Run database migrations
 bash
 Copy code
 python manage.py migrate
-Start backend server
-
+6. Start the backend server
 bash
 Copy code
 python manage.py runserver
-Start React frontend
-
+7. Start the frontend
 bash
 Copy code
 cd frontend
 npm install
 npm start
+🌟 Usage
+Upload your documents via the Upload page
 
-## 🌟 Usage
-Upload documents via the Upload page
+Access AI-generated notes, quizzes, and flashcards
 
-View AI-generated notes, quizzes, flashcards
+Monitor your learning progress via the dashboard with insightful stats and personalized recommendations
 
-Track progress via Dashboard with stats and recommendations
-
-## 🔮 Future Enhancements
+🔮 Future Enhancements
 Multi-language support (Marathi, Hindi, English)
 
 Mobile app integration
@@ -92,7 +110,7 @@ Live quiz sessions & collaboration
 
 Enhanced AI summarization using advanced LLMs
 
-## 📬 Contact
+📬 Contact
 Sandesh Pol
 
 Email: sandeshpol268@gmail.com
