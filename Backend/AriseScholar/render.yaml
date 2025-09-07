@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: arisescholar-backend
+    env: python
+    plan: free
+    buildCommand: |
+      cd Backend/AriseScholar
+      pip install -r ../../requirements.txt
+      python manage.py migrate
+      python manage.py collectstatic --noinput
+    startCommand: |
+      cd Backend/AriseScholar
+      gunicorn AriseScholar.wsgi --bind 0.0.0.0:$PORT --workers 3 --timeout 120
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.11
+      - key: DJANGO_SETTINGS_MODULE
+        value: AriseScholar.settings
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: False
+      - key: ALLOWED_HOSTS
+        value: *.onrender.com

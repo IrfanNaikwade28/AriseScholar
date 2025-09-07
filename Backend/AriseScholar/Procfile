@@ -1,1 +1,1 @@
-web: gunicorn AriseScholar.wsgi
+web: chmod +x start.sh && ./start.sh
