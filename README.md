@@ -1,4 +1,4 @@
-# 🌟 VIRTUAL AriseScholar - AI-Powered Study Companion
+# AriseScholar - AI-Powered Study Companion
 
 ---
 
