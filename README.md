@@ -1,9 +1,12 @@
 # 🌟 VIRTUAL AriseScholar - AI-Powered Study Companion
 
+---
 
-**AriseScholar** is an **AI-driven educational platform** that automates note-taking, quiz creation, and flashcard generation from PDFs, DOCX, and PYQs. It also provides a **personalized dashboard** for adaptive learning and progress tracking.  
-#Demo Video
+## Demo Video
 https://github.com/user-attachments/assets/bc78e00b-b1c4-4b65-9446-ab0be1a1f881
+
+---
+**AriseScholar** is an **AI-driven educational platform** that automates note-taking, quiz creation, and flashcard generation from PDFs, DOCX, and PYQs. It also provides a **personalized dashboard** for adaptive learning and progress tracking.  
 ---
 
 ## 🚀 Features
