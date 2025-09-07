@@ -25,9 +25,7 @@ Frontend	React / Next.js
 - **Deployment	Render / Cloud Platform
 - **Tools & Libs	PyPDF2, python-docx, Django CORS, DRF SimpleJWT, Whitenoise
 
-# 🧠 AriseScholar - AI-Powered Study Companion
 
-AriseScholar helps students learn smarter by automatically generating **notes, quizzes, and flashcards** from uploaded documents. Track progress and receive adaptive recommendations through an interactive dashboard.  
 # 🧠 AriseScholar - AI-Powered Study Companion
 
 AriseScholar helps students learn smarter by automatically generating **notes, quizzes, and flashcards** from uploaded documents. Track progress and receive adaptive recommendations through an interactive dashboard.  
@@ -57,7 +55,8 @@ AriseScholar helps students learn smarter by automatically generating **notes, q
 ## 💻 Installation
 
 ### 1. Clone the repository
-```bash
+
+bash
 git clone https://github.com/IrfanNaikwade28/AriseScholar.git
 cd AriseScholar
 2. Create and activate a Python virtual environment
@@ -68,7 +67,7 @@ python -m venv venv
 source venv/bin/activate
 # Windows
 venv\Scripts\activate
-3. Install backend dependencies
+3. Install backend dependencies 
 bash
 Copy code
 pip install -r requirements.txt
