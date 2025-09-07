@@ -25,7 +25,7 @@ urlpatterns = [
     path('api/level1/', include('flashcards.urls')),
     path('api/level2/', include('quizzes.urls')),
     path('api/dashboard/', include('dashboard.urls')),
-
+    path('api/level3/', include('notesgenerator.urls')),
 ]
 
 # Serve media files during development

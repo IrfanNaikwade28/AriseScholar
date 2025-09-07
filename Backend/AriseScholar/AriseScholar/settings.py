@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'flashcards',
     'quizzes',
     'dashboard',
+    'notesgenerator',  # Add this line
 
 
 ]
@@ -154,6 +155,7 @@ import os
 
 load_dotenv()  # load .env file
 GROQ_API_KEY = os.getenv('GROQ_API_KEY')
+GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
 
 # CORS settings
 CORS_ALLOWED_ORIGINS = [
