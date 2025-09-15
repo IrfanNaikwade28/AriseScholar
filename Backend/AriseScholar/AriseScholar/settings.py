@@ -173,3 +173,7 @@ CORS_ALLOW_CREDENTIALS = True
 
 # Allow all headers for file uploads
 CORS_ALLOW_ALL_ORIGINS = True  # Only for development
+
+# settings.py
+
+AUTH_USER_MODEL = 'users.CustomUser'

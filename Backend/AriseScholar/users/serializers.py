@@ -1,25 +1,24 @@
 # users/serializers.py
 from rest_framework import serializers
-from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
+from .models import CustomUser
 
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, min_length=6)
 
     class Meta:
-        model = User
-        fields = ['first_name', 'last_name', 'email', 'password']
+        model = CustomUser
+        fields = ['email', 'username', 'password', 'study_goal']
 
     def create(self, validated_data):
-        # Use email as username
-        user = User.objects.create_user(
-            username=validated_data['email'],
+        user = CustomUser.objects.create_user(
             email=validated_data['email'],
-            first_name=validated_data['first_name'],
-            last_name=validated_data['last_name'],
+            username=validated_data['username'],
+            study_goal=validated_data['study_goal'],
             password=validated_data['password']
         )
         return user
+
 
 class LoginSerializer(serializers.Serializer):
     email = serializers.EmailField()
@@ -31,3 +30,18 @@ class LoginSerializer(serializers.Serializer):
             raise serializers.ValidationError("Invalid email or password")
         data['user'] = user
         return data
+
+class UserSerializer(serializers.ModelSerializer):
+    badges = serializers.SerializerMethodField()
+
+    class Meta:
+        model = CustomUser
+        fields = ['id', 'email', 'username', 'xp', 'level', 'streak', 'badges']
+
+    def get_badges(self, obj):
+        badges = []
+        if obj.level >= 1:
+            badges.append("First Quiz")
+        if obj.streak >= 7:
+            badges.append("7 Day Streak")
+        return badges

@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.conf import settings
 
 class Document(models.Model):
     PDF = 'pdf'
@@ -11,7 +11,7 @@ class Document(models.Model):
         (TXT, 'TXT'),
     ]
 
-    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='documents')
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='documents')
     title = models.CharField(max_length=255, blank=True)
     type = models.CharField(max_length=10, choices=DOC_TYPES, blank=True)
     original_name = models.CharField(max_length=255, blank=True)
