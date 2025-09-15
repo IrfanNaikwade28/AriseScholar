@@ -29,6 +29,11 @@ export default function StudyDeck() {
 
 function Tab({ to, children, active }) {
   return (
-  <NavLink to={to} className={`px-3 py-1.5 rounded-xl border ${active ? 'border-primary-500 bg-primary-100 dark:bg-primary-500/10' : 'border-grey-300 dark:border-grey-700 hover:bg-grey-50 dark:hover:bg-grey-800'}`}>{children}</NavLink>
+    <NavLink
+      to={to}
+      className={`px-3 py-1.5 rounded-xl border transition ${
+        active ? 'border-primary-500 bg-primary-500/10 text-primary-200' : 'border-white/10 hover:bg-white/5'
+      }`}
+    >{children}</NavLink>
   )
 }

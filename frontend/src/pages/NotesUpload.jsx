@@ -26,20 +26,20 @@ export default function NotesUpload() {
         <CardHeader><CardTitle>Upload Notes</CardTitle></CardHeader>
         <CardContent>
           <div
-            className="border-2 border-dashed rounded-2xl p-8 text-center hover:bg-grey-50 dark:hover:bg-grey-800/40"
+            className="border-2 border-dashed border-white/10 rounded-2xl p-8 text-center hover:bg-white/5"
             onDragOver={(e)=>e.preventDefault()}
             onDrop={(e)=>{e.preventDefault(); const f=e.dataTransfer.files?.[0]; if(f){setFileName(f.name); simulateProcessing();}}}
           >
-            <p className="text-grey-600 dark:text-grey-300">Drag and drop files here or</p>
+            <p className="text-grey-300">Drag and drop files here or</p>
             <label className="inline-block mt-3">
               <input type="file" className="hidden" onChange={(e)=>{const f=e.target.files?.[0]; if(f){setFileName(f.name); simulateProcessing();}}} />
-              <span className="px-4 py-2 rounded-xl bg-primary-500 text-white hover:bg-primary-700 cursor-pointer">Choose File</span>
+              <span className="px-4 py-2 rounded-xl bg-primary-500 text-white hover:bg-secondary-500 cursor-pointer">Choose File</span>
             </label>
             {fileName && <p className="mt-3 text-sm">Selected: {fileName}</p>}
           </div>
 
           <div className="mt-6">
-            <p className="text-sm mb-2">AI Processing</p>
+            <p className="text-sm mb-2 text-grey-300">AI Processing</p>
             <ProgressBar value={progress} />
           </div>
         </CardContent>
@@ -58,7 +58,7 @@ export default function NotesUpload() {
               </div>
             </div>
           ) : (
-            <p className="text-grey-500">No output yet. Upload a file to generate.</p>
+            <p className="text-grey-300">No output yet. Upload a file to generate.</p>
           )}
         </CardContent>
       </Card>

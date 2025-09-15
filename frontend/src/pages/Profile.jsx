@@ -12,7 +12,12 @@ export default function Profile() {
           <div>Level {userProfile.level} • {userProfile.xp} XP • {userProfile.streak} day streak</div>
           <div>Cards Mastered: {userProfile.cardsMastered}</div>
           <div className="flex gap-2 mt-2 flex-wrap">
-            {userProfile.badges.map(b => <span key={b} className="px-2 py-1 rounded-full bg-primary-100 dark:bg-primary-500/10 text-primary-700 dark:text-primary-300 text-xs">{b}</span>)}
+            {userProfile.badges.map(b => (
+              <span
+                key={b}
+                className="px-2 py-1 rounded-full bg-primary-500/20 text-amber-200 border border-amber-400/40 shadow-[inset_0_1px_0_rgba(250,204,21,0.25)] text-xs"
+              >{b}</span>
+            ))}
           </div>
         </CardContent>
       </Card>
@@ -22,7 +27,7 @@ export default function Profile() {
         <CardContent>
           <ol className="space-y-2">
             {leaderboard.map((p, i) => (
-              <li key={p.name} className="flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50">
+              <li key={p.name} className="flex items-center justify-between p-3 rounded-xl bg-white/5">
                 <span className="font-semibold">#{i+1} {p.name}</span>
                 <span>{p.xp} XP • L{p.level}</span>
               </li>
@@ -35,10 +40,10 @@ export default function Profile() {
         <CardHeader><CardTitle>Study Groups</CardTitle></CardHeader>
         <CardContent className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
           {studyGroups.map((g)=>(
-            <div key={g.id} className="p-4 rounded-xl border border-grey-200 dark:border-grey-800">
+            <div key={g.id} className="p-4 rounded-xl border border-white/5 bg-white/5">
               <div className="font-semibold">{g.name}</div>
-              <div className="text-sm text-grey-500">{g.members} members</div>
-              <a href="#" className="text-primary-600 text-sm hover:underline">Open (mock)</a>
+              <div className="text-sm text-grey-300">{g.members} members</div>
+              <a href="#" className="text-secondary-300 text-sm hover:underline">Open (mock)</a>
             </div>
           ))}
         </CardContent>
